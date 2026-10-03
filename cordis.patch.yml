@@ -1,0 +1,12 @@
+- insert:
+    - id: safe-release-update
+      name: dsh-update
+      config:
+        checkOnStart: true
+        scheduledChecks: true
+        updateTimeMinutes: 180
+        updateWindowMinutes: 60
+        checkIntervalMinutes: 30
+        autoApply: false
+        idleQuietSeconds: 120
+        channel: preview

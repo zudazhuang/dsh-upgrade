@@ -1,0 +1,75 @@
+{
+  "name": "dsh-update",
+  "version": "0.3.0",
+  "description": "Official release checks and isolated, supervised source updates for DeepSeek Harness",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "engine.js",
+    "store.js",
+    "supervisor.mjs",
+    "cordis.patch.yml",
+    "README.md",
+    "start-harness.sh",
+    "schedule.js",
+    "install-login-start.py"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "semver": "7.7.4"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.4 || 4.0.5-alpha.1",
+    "@deepseek-ai/schemastery": "^3.18.4 || 3.18.5-alpha.1",
+    "react": ">=18 <19"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.0.4",
+    "@deepseek-ai/schemastery": "3.18.4",
+    "react": "18.3.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-plugin-manager",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ]
+    }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zudazhuang/dsh-update.git"
+  },
+  "homepage": "https://github.com/zudazhuang/dsh-update#readme",
+  "bugs": {
+    "url": "https://github.com/zudazhuang/dsh-update/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "updater"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  }
+}

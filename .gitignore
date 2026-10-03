@@ -1,0 +1,9 @@
+node_modules/
+*.tgz
+__pycache__/
+*.pyc
+*.log
+.env
+.env.*
+update-status.jpg
+.DS_Store
