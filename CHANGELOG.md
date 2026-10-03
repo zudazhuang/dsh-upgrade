@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.1
+
+- Rename the package and repository to `dsh-upgrade`; `dsh-update` is owned by another npm author.
+- Retain settings IDs, RPC routes, update storage and login launch job.
+- Set the official npm registry for publishing.
+
 ## 0.3.0
 
 - Rename the public package and plugin page to `dsh-update`.

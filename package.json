@@ -1,6 +1,6 @@
 {
-  "name": "dsh-update",
-  "version": "0.3.0",
+  "name": "dsh-upgrade",
+  "version": "0.3.1",
   "description": "Official release checks and isolated, supervised source updates for DeepSeek Harness",
   "type": "module",
   "main": "index.js",
@@ -57,11 +57,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zudazhuang/dsh-update.git"
+    "url": "https://github.com/zudazhuang/dsh-upgrade.git"
   },
-  "homepage": "https://github.com/zudazhuang/dsh-update#readme",
+  "homepage": "https://github.com/zudazhuang/dsh-upgrade#readme",
   "bugs": {
-    "url": "https://github.com/zudazhuang/dsh-update/issues"
+    "url": "https://github.com/zudazhuang/dsh-upgrade/issues"
   },
   "keywords": [
     "dsh-plugin",
@@ -71,5 +71,9 @@
   ],
   "engines": {
     "node": "^22.19.0 || >=24.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }

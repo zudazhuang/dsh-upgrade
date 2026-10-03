@@ -1,5 +1,5 @@
 /** Browser settings contribution; all product copy comes from these locale dictionaries. */
-window.__ModuleLoader__.load({ id: 'dsh-update', factory: require => {
+window.__ModuleLoader__.load({ id: 'dsh-upgrade', factory: require => {
   const { Button, Switch } = require('@deepseek-ai/dsh-client-ui-primitives')
   const React = require('react')
   const { createElement: h, useState, useEffect, useSyncExternalStore } = React
@@ -95,14 +95,14 @@ window.__ModuleLoader__.load({ id: 'dsh-update', factory: require => {
       return () => { mounted = false; clearInterval(timer) }
     }, [connection])
     const available = ['available', 'prepared'].includes(state?.phase)
-    return h('button', { onClick: () => navigation.openBundle('dsh-update'), title: t.title, 'aria-label': available ? `${t.updateAvailable}: ${state.latest?.version}` : t.title }, available ? `${t.updateAvailable} ${state.latest?.version}` : '↑')
+    return h('button', { onClick: () => navigation.openBundle('dsh-upgrade'), title: t.title, 'aria-label': available ? `${t.updateAvailable}: ${state.latest?.version}` : t.title }, available ? `${t.updateAvailable} ${state.latest?.version}` : '↑')
   }
   return {
-    name: 'dsh-update/client', inject: ['slots', 'connection', 'configForms', 'locale', 'pluginNavigation'],
+    name: 'dsh-upgrade/client', inject: ['slots', 'connection', 'configForms', 'locale', 'pluginNavigation'],
     apply(ctx) {
       const form = ctx.configForms.get('safe-release-update')
       ctx.slots.inject('sidebar.footer.action', () => ctx.slots.register({ name: 'sidebar.footer.action', id: 'safe-release-update', order: 90, inject: () => ({ connection: ctx.connection, locale: ctx.locale, navigation: ctx.pluginNavigation }) }, Badge))
-      ctx.slots.inject('plugins.bundle.config', () => ctx.slots.register({ name: 'plugins.bundle.config', key: 'dsh-update', inject: () => ({ connection: ctx.connection, form, locale: ctx.locale }) }, Card))
+      ctx.slots.inject('plugins.bundle.config', () => ctx.slots.register({ name: 'plugins.bundle.config', key: 'dsh-upgrade', inject: () => ({ connection: ctx.connection, form, locale: ctx.locale }) }, Card))
     },
   }
 } })

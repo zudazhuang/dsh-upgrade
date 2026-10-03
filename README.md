@@ -1,4 +1,4 @@
-# dsh-update
+# dsh-upgrade
 
 DeepSeek Harness 源码安装的官方版本检查和安全更新插件。适配 0.2.0-rc.2 与 0.2.1-alpha.1 的 ConfigForms 与插件详情页；提供启动检查、手动“检查更新”、可关闭的定时检查与每日安装时段。默认启动检查与每 30 分钟检查开启；自动安装默认关闭。侧栏底部提供更新入口和新版提示，核对 GitHub 官方发布和 npm 发布记录。网络错误显示未验证，预发布与稳定渠道分别比较，禁止降级。
 
@@ -6,13 +6,13 @@ DeepSeek Harness 源码安装的官方版本检查和安全更新插件。适配
 
 社区插件，非 DeepSeek 官方产品。支持 Harness 源码 Web 安装；当前在 0.2.1-alpha.1 验证，适配 ConfigForms 设置接口。需要 Node.js ^22.19 或 >=24、pnpm、Git；Mac 登录自动启动还需 Python 3。
 
-从 [Releases](https://github.com/zudazhuang/dsh-update/releases) 下载版本固定的 `dsh-update-0.3.0.tgz`，在 Harness 源码目录运行：
+从 [Releases](https://github.com/zudazhuang/dsh-upgrade/releases) 下载版本固定的 `dsh-upgrade-0.3.1.tgz`，在 Harness 源码目录运行：
 
 ```sh
-pnpm dsh plugin --profile web add /absolute/path/dsh-update-0.3.0.tgz
+pnpm dsh plugin --profile web add /absolute/path/dsh-upgrade-0.3.1.tgz
 ```
 
-开发者也可克隆本仓库，运行 `npm ci`、`npm test`、`npm pack` 后安装生成的包。插件 → dsh-update 提供检查、隔离构建、切换操作和检查间隔、渠道、空闲时长、自动切换配置。自动切换默认关闭；未使用监督启动或源码存在未提交修改时，自动安装暂停；页面允许保存自动安装偏好，满足条件后只在指定时段执行。
+开发者也可克隆本仓库，运行 `npm ci`、`npm test`、`npm pack` 后安装生成的包。插件 → dsh-upgrade 提供检查、隔离构建、切换操作和检查间隔、渠道、空闲时长、自动切换配置。自动切换默认关闭；未使用监督启动或源码存在未提交修改时，自动安装暂停；页面允许保存自动安装偏好，满足条件后只在指定时段执行。
 
 本机启动：
 
@@ -52,8 +52,8 @@ DSH_SOURCE=/path/to/deepseek-harness ./start-harness.sh
 
 ## 从旧名称迁移
 
-0.3.0 将安装包和插件详情页名称从 `dsh-safe-release-update` 缩短为 `dsh-update`。内部配置 id `safe-release-update`、RPC 方法、监督进程锁和 `~/.local/share/dsh-safe-release-update` 数据目录保留，避免丢失设置或备份。迁移前停止监督启动；移除旧 bundle 后添加新包。若移除操作清理了旧配置，需从备份恢复 `safe-release-update` 配置。不要同时启用两个 bundle。
+0.3.1 将安装包和插件详情页名称统一为 `dsh-upgrade`，替代旧的 `dsh-update` 和 `dsh-safe-release-update`。内部配置 id `safe-release-update`、RPC 方法、监督进程锁和 `~/.local/share/dsh-safe-release-update` 数据目录保留，避免丢失设置或备份。迁移前停止监督启动；移除旧 bundle 后添加新包。若移除操作清理了旧配置，需从备份恢复 `safe-release-update` 配置。不要同时启用两个 bundle。
 
 ## 社区发布
 
-仓库添加 `dsh-plugin`、`deepseek-harness` 和 `dsh` topics；GitHub 主题页按标签收录，索引可能延迟。版本固定的安装包发布在 GitHub Releases。此仓库没有发布到 npm，GitHub topic 收录也不代表官方审核或兼容性认证。
+仓库添加 `dsh-plugin`、`deepseek-harness` 和 `dsh` topics；GitHub 主题页按标签收录，索引可能延迟。版本固定的安装包发布在 GitHub Releases。npm 发布尚待完成账号登录；当前通过 GitHub Release 安装。GitHub topic 收录也不代表官方审核或兼容性认证。

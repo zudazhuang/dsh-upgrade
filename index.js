@@ -10,7 +10,7 @@ import semver from 'semver'
 import { checkRelease, prepare, command, sourceStatus, deploymentHash, validatePlan } from './engine.js'
 import { readJson, writeJson } from './store.js'
 
-export const name = 'dsh-update'
+export const name = 'dsh-upgrade'
 export const inject = ['connection', 'agents', 'jobs', 'sessions']
 export const Config = z.object({
   checkOnStart: z.boolean().default(true).volatile(),

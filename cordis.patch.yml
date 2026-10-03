@@ -1,6 +1,6 @@
 - insert:
     - id: safe-release-update
-      name: dsh-update
+      name: dsh-upgrade
       config:
         checkOnStart: true
         scheduledChecks: true

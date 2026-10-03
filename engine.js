@@ -52,7 +52,7 @@ export function selectRelease(releases, registry, channel) {
 /** Fetch both official authorities. Network errors invalidate the verdict. */
 export async function checkRelease(channel, signal) {
   const fetchJson = async url => {
-    const res = await fetch(url, { signal: AbortSignal.any([signal ?? new AbortController().signal, AbortSignal.timeout(20000)]), headers: { 'User-Agent': 'dsh-update' }, redirect: 'error' })
+    const res = await fetch(url, { signal: AbortSignal.any([signal ?? new AbortController().signal, AbortSignal.timeout(20000)]), headers: { 'User-Agent': 'dsh-upgrade' }, redirect: 'error' })
     if (!res.ok) throw new Error(`Official source returned HTTP ${res.status}`)
     return res.json()
   }
